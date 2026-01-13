@@ -1,5 +1,5 @@
 <script>
-	// Props
+	// Props 
   let { profName, subject, rating, comment } = $props();
 </script>
 

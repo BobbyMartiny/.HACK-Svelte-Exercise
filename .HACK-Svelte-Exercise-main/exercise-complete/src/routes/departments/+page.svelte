@@ -1,11 +1,9 @@
 <script>
-		
     let staffList = $state([]); // ignore the red underline 
     let loading = $state(false);
 
     async function loadData() {
-        loading = true
-        // Fetch data from '/api/profs' 
+        loading = true;
         const response = await fetch('/api/profs');
         staffList = await response.json();
         loading = false;
@@ -22,7 +20,6 @@
     {/if}
 
     <ul class="directory-list">
-		    <!-- For Loop Structure! -->
         {#each staffList as person}
             <li>
                 <strong>{person.name}</strong> 

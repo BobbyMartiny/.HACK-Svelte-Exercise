@@ -1,5 +1,4 @@
 <script>
-	// Props
   let { profName, subject, rating, comment } = $props();
 </script>
 
@@ -12,12 +11,10 @@
   <div class="rating-row">
     <strong>Rating: {rating} / 5</strong>
     
-    <!-- If statement -->
     {#if rating > 4}
       <span class="badge gold">Top Tier</span>
     {/if}
-    
-	  <!-- If statement -->
+
     {#if rating < 3}
       <span class="badge red">Avoid!</span>
     {/if}

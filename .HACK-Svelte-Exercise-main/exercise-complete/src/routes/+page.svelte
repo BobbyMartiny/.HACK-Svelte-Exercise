@@ -2,23 +2,21 @@
   import ReviewCard from "$lib/ReviewCard.svelte";
 
   let showTopTierOnly = $state(false);
-	// Array containing dictionaries 
+
   let allReviews = [
-    { id: 1, prof: "Prof. Yow Leon", subject: "CompSci", rating: 5, comment: "Changed my life." },
-    { id: 2, prof: "Prof. Who", subject: "Math", rating: 5, comment: "Literally takes you back in time." },
-    { id: 3, prof: "Dr. Zhang Zi Yu", subject: "Math", rating: 2, comment: "Very confusing lectures." },
-    { id: 4, prof: "Prof. Where", subject: "Physics", rating: 3, comment: "It was okay, lots of homework." }
+    { id: 1, prof: "Dr. Smith", subject: "CompSci", rating: 5, comment: "Changed my life." },
+    { id: 2, prof: "Prof. Stone", subject: "Math", rating: 2, comment: "Very confusing lectures." },
+    { id: 3, prof: "Dr. Who", subject: "History", rating: 5, comment: "Literally takes you back in time." },
+    { id: 4, prof: "Mrs. P", subject: "Physics", rating: 3, comment: "It was okay, lots of homework." }
   ];
 
   function toggleFilter() {
-    showTopTierOnly = !showTopTierOnly; // ! operator used to negate a boolean value. !false = true
+    showTopTierOnly = !showTopTierOnly;
   }
 </script>
 
 <main>
   <h1>SMU Professor Reviews</h1>
-
-  <small>Note: The below professors, ratings and comments are purely fictitious</small>
 
   <div class="controls">
     <button onclick={toggleFilter}>
@@ -27,7 +25,6 @@
   </div>
 
   <section>
-	  <!-- Loops through allReviews -->
     {#each allReviews as review}
       {#if showTopTierOnly === false || review.rating > 4}
         <ReviewCard 

@@ -5,7 +5,7 @@
 
     async function loadData() {
         loading = true
-        // Fetch data from '/api/profs' 
+        // Fetch data from '/api/profs'
         const response = await fetch('/api/profs');
         staffList = await response.json();
         loading = false;
